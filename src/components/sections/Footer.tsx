@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
             <div className="flex justify-between items-center h-10 text-center">
                 <div className="w-full flex justify-center">
                     <small className="text-sm text-gray-400 text-center">
-                        Copyright &copy; {new Date().getFullYear()}. Momena. All rights reserved.
+                        &copy; {new Date().getFullYear()}. Momena. All rights reserved.
                     </small>
                 </div>
             </div>
