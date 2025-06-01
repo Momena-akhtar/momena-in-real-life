@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import { faGraduationCap , faMessage} from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-
+import RevealOnScroll from "../RevealOnScroll";
 const About = () => {
   const frontendSkills = [
     "React",
@@ -10,12 +10,13 @@ const About = () => {
     "TailwindCSS",
     "Vue",
   ];
-  const backendSkills = ["Express", "Node.js", "MongoDB", "GraphQL"];
+  const backendSkills = ["Express", "Node.js", "MongoDB", "GraphQL", "Langchain"];
   return (
     <section
       id="about"
       className="min-h-screen flex items-center justify-center py-20"
     >
+      <RevealOnScroll>
       <div className="max-w-3xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent text-center">
           About me.
@@ -79,12 +80,22 @@ const About = () => {
                 >
                   <FontAwesomeIcon icon={faLinkedin}  />
                 </a>
+                <a
+                  href="https://www.gmail.com/momena.akhtar19@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white text-xl hover:text-blue-800 transition"
+                  aria-label="Email"
+                >
+                  <FontAwesomeIcon icon={faMessage}  />
+                </a>
               </div>
             </div>
           </div>
         </div>
        
       </div>
+      </RevealOnScroll>
     </section>
   );
 };

@@ -6,7 +6,7 @@ interface MobileMenuProps {
 const MobileMenu = ({ menuOpen, setMenuOpen }: MobileMenuProps) => {
   return (
     <div
-      className={`fixed top-0 left-0 w-full bg-[rgba(10,10,10,0.8)] z-40 flex flex-col items-center justify-center
+      className={`fixed top-0 max-w-screen left-0 w-full bg-[rgba(10,10,10,0.8)] z-40 flex flex-col items-center justify-center
         transition-all duration-300 ease-in-out 
         ${
           menuOpen
@@ -17,7 +17,7 @@ const MobileMenu = ({ menuOpen, setMenuOpen }: MobileMenuProps) => {
     >
       <button
         onClick={() => setMenuOpen(false)}
-        className="absolute top-6 right-6 text-white text-3xl focus:outline-none cursor-ponter"
+        className="absolute top-6 right-8 text-white text-2xl focus:outline-none cursor-pointer sm:text-medium"
         aria-label="Close"
       >
         &times;
