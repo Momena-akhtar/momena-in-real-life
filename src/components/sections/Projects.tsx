@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import RevealOnScroll from '../RevealOnScroll';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 const Projects = () => {
   return (
     <section
@@ -83,12 +84,22 @@ const Projects = () => {
               ))}
             </div>
             <a 
-            target='_blank'
-            href="https://github.com/TalalMajeed/Quiz-Rush"
-            className=" text-white hover:text-blue-800 text-sm transition-colors">
-                <FontAwesomeIcon icon={faGithub}  className="text-white pr-2" />
-                View Project 
-                <span className="ml-1 text-sm">&#8594;</span>
+              target='_blank'
+              href="https://github.com/TalalMajeed/Quiz-Rush"
+              className="text-white hover:text-blue-800 text-sm transition-colors block mb-1"
+            >
+              <FontAwesomeIcon icon={faGithub} className="text-white pr-2" />
+              View Project 
+              <span className="ml-1 text-sm">&#8594;</span>
+            </a>
+            <a 
+              target='_blank'
+              href="https://quizrush.developertest.cloud/"
+              className="text-white hover:text-blue-800 text-sm transition-colors block"
+            >
+              <FontAwesomeIcon icon={faLink} className="text-white pr-2" />
+              Live Project 
+              <span className="ml-1 text-sm">&#8594;</span>
             </a>
             <div className='ml-1 text-sm text-gray-400'>
                 Collaborators: 
@@ -97,6 +108,7 @@ const Projects = () => {
                 className='text-blue-800'
                 href="#"> {" "}Codexon team</a>
             </div>
+            
           </div>
           {/* SADDAM'S CHATBOT */}
           <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-800/50
@@ -126,14 +138,23 @@ const Projects = () => {
               ))}
             </div>
             <a 
-            target='_blank'
-            href="https://github.com/Momena-akhtar/chatbot"
-            className=" text-white hover:text-blue-800 text-sm transition-colors">
-                <FontAwesomeIcon icon={faGithub}  className="text-white pr-2" />
-                View Project 
-                <span className="ml-1 text-sm">&#8594;</span>
+              target='_blank'
+              href="https://github.com/Momena-akhtar/chatbot"
+              className="text-white hover:text-blue-800 text-sm transition-colors block mb-1"
+            >
+              <FontAwesomeIcon icon={faGithub} className="text-white pr-2" />
+              View Project 
+              <span className="ml-1 text-sm">&#8594;</span>
             </a>
-            
+            <a 
+              target='_blank'
+              href="https://saddam-chatbot.vercel.app/"
+              className="text-white hover:text-blue-800 text-sm transition-colors block"
+            >
+              <FontAwesomeIcon icon={faLink} className="text-white pr-2" />
+              Live Project 
+              <span className="ml-1 text-sm">&#8594;</span>
+            </a>
           </div>
         </div>
       </div>
