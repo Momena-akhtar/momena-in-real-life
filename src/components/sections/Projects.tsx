@@ -20,8 +20,7 @@ const Projects = () => {
             <h3 className="text-xl font-bold mb-2"> Sync </h3>
             <p className="text-gray-400 mb-4 ">
               {" "}
-              A scalable real-time collaborative whiteboard made with MERN
-              stack.
+              A powerful real-time collaborative whiteboard built with the MERN stack, enabling teamwork, instant updates, and interactive brainstorming from anywhere.
             </p>
             <div className="m-2 flex flex-wrap gap-2">
               {[
@@ -63,7 +62,7 @@ const Projects = () => {
             <h3 className="text-xl font-bold mb-2"> Quiz Rush </h3>
             <p className="text-gray-400 mb-4 ">
               {" "}
-              Worked on an interactive Quiz-making, publishing and solving platform.
+              Working on an engaging platform for creating, publishing, and solving quizzes, empowering users to challenge themselves and others in a dynamic, interactive environment.
             </p>
             <div className="m-2 flex flex-wrap gap-2">
               {[
@@ -116,7 +115,7 @@ const Projects = () => {
             <h3 className="text-xl font-bold mb-2"> Saddam's Chatbot </h3>
             <p className="text-gray-400 mb-4 ">
               {" "}
-              Developed a RAG-based assistive chatbot for Pakistan's biggest Agency Owner Saddam Hasan.
+              Developed a RAG-powered chatbot for Pakistan’s leading agency owner, Saddam Hasan, delivering intelligent, context-aware assistance and elevating client engagement.
             </p>
             <div className="m-2 flex flex-wrap gap-2">
               {[
