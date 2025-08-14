@@ -84,7 +84,7 @@ const Projects = () => {
             </div>
             <a 
               target='_blank'
-              href="https://github.com/TalalMajeed/Quiz-Rush"
+              href="https://github.com/codexonsolutions/Quiz-Rush-Frontend"
               className="text-white hover:text-blue-800 text-sm transition-colors block mb-1"
             >
               <FontAwesomeIcon icon={faGithub} className="text-white pr-2" />
@@ -93,7 +93,7 @@ const Projects = () => {
             </a>
             <a 
               target='_blank'
-              href="https://quizrush.developertest.cloud/"
+              href="https://quizrush.online/"
               className="text-white hover:text-blue-800 text-sm transition-colors block"
             >
               <FontAwesomeIcon icon={faLink} className="text-white pr-2" />
