@@ -8,11 +8,11 @@ const About = () => {
     "Next.js",
     "Typescript",
     "TailwindCSS",
-    "Vue",
+    "Flutter",
   ];
-  const backendSkills = ["Express", "Node.js", "MongoDB", "MySQL", "GraphQL"];
-  const tools = ["Git", "CI/CD", "Redis", "Linux", "VS Code", "Postman"];
-  const aiml = ["Python", "Langchain", "LLMs/RAG", "Tensorflow", "OpenAI API", "HuggingFace"];
+  const backendSkills = ["Express", "Node.js", "MongoDB", "MySQL", "Flask"];
+  const tools = ["Git", "CI/CD","Docker", "Redis", "Postman"];
+  const aiml = ["Python", "Langchain", "LLMs/RAG", "Tensorflow", "OpenAI API"];
   return (
     <section
       id="about"
