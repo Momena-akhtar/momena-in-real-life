@@ -66,6 +66,58 @@ const Projects = () => {
                 href="/"> {" "}Shaheer-Ul-Haq</a>
             </div>
           </div>
+          {/*NEXT REP */}
+           <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-800/50
+          hover:shadow-[0_2px_8px_rgba(59, 130, 246, 0.2)] transition cursor-pointer">
+            <h3 className="text-xl font-bold mb-2"> Next Rep </h3>
+            <p className="text-gray-400 mb-4 ">
+              {" "}
+              An AI-powered fitness platform to provide personalized health tracking, progress monitoring, and actionable insights for users.
+            </p>
+            <div className="m-2 flex flex-wrap gap-2">
+              {[
+                "React",
+                "Express",
+                "MongoDB",
+                "TailwindCSS",
+                "Langchain",
+                "OpenAI",
+              ].map((tech, key) => (
+                <span
+                  key={key}
+                  className="bg-blue-800/50 text-white px-5 py-2 cursor-pointer rounded-full text-sm hover:bg-transparent 
+                        hover:shadow[0_2px_8px_rgba(59, 130, 246, 0.2)] transition
+                        "
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <a 
+            target='_blank'
+            href="https://github.com/12Danish/NextRepFrontend"
+            className=" text-white hover:text-blue-800 text-sm transition-colors">
+                <FontAwesomeIcon icon={faGithub}  className="text-white pr-2" />
+                View Project 
+                <span className="ml-1 text-sm">&#8594;</span>
+            </a>
+            <a 
+              target='_blank'
+              href="https://nextrep.site/"
+              className="text-white hover:text-blue-800 text-sm transition-colors block"
+            >
+              <FontAwesomeIcon icon={faLink} className="text-white pr-2" />
+              Live Project 
+              <span className="ml-1 text-sm">&#8594;</span>
+            </a>
+            <div className='ml-1 text-sm text-gray-400'>
+                Collaborators: 
+                <a 
+                target='_blank'
+                className='text-blue-800'
+                href="https://github.com/12Danish"> {" "}Danish Abbas</a>
+            </div>
+          </div>
           {/* QUIZ RUSH */}
           <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-800/50
           hover:shadow-[0_2px_8px_rgba(59, 130, 246, 0.2)] transition cursor-pointer">
@@ -115,7 +167,7 @@ const Projects = () => {
                 <a 
                 target='_blank'
                 className='text-blue-800'
-                href="#"> {" "}Codexon team</a>
+                href="https://github.com/TalalMajeed"> {" "}Talal Majeed</a>
             </div>
             
           </div>
@@ -125,7 +177,7 @@ const Projects = () => {
             <h3 className="text-xl font-bold mb-2"> Saddam's Chatbot </h3>
             <p className="text-gray-400 mb-4 ">
               {" "}
-              Developed a RAG-powered chatbot for Pakistan’s leading agency owner, Saddam Hasan, delivering intelligent, context-aware assistance and elevating client engagement.
+              Developed a RAG-powered chatbot for Pakistan’s leading agency owner, Saddam Hasan, delivering intelligent, context-aware assistance and improving client engagement.
             </p>
             <div className="m-2 flex flex-wrap gap-2">
               {[
