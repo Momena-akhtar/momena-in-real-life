@@ -34,7 +34,7 @@ const Contact = () => {
     >
       <RevealOnScroll>
         <div className="max-w-[70%] mx-auto px-4 w-150">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent text-center">
+          <h2 className="text-3xl font-bold mb-8 text-center">
             Get in touch.
           </h2>
           <form action="" className="space-y-6 " onSubmit={handleSubmit}>
@@ -49,7 +49,7 @@ const Contact = () => {
                 }
                 required
                 placeholder="Enter your name.."
-                className="w-full border border-white/10 rounded-xl px-4 py-3 transition focus:outline-none focus:border-blue-800/50"
+                className="w-full border border-white/10 rounded-xl px-4 py-3 transition focus:outline-none focus:border-white/10"
               />
             </div>
             <div className="relative">
@@ -63,7 +63,7 @@ const Contact = () => {
                 }
                 required
                 placeholder="example@gmail.com"
-                className="w-full border border-white/10 rounded-xl px-4 py-3 transition focus:outline-none focus:border-blue-800/50"
+                className="w-full border border-white/10 rounded-xl px-4 py-3 transition focus:outline-none focus:border-white/10"
               />
             </div>
             <div className="relative">
@@ -77,12 +77,12 @@ const Contact = () => {
                 required
                 rows={5}
                 placeholder="Enter your message.."
-                className="w-full border border-white/10 rounded-xl px-4 py-3 transition focus:outline-none focus:border-blue-800/50"
+                className="w-full border border-white/10 rounded-xl px-4 py-3 transition focus:outline-none focus:border-white/10"
               />
             </div>
             <button
-              className="w-full border border-blue-800 text-white py-3 px-6 rounded-full font-medium transition 
-            relative overflow-hidden hover:-translate-y-0.5 cursor-pointer hover:shadow[0_0_15px_rgba(59, 130, 246, 0.4)] hover:bg-blue-800/50 hover:border-blue-800/50
+              className="w-full border border-white/10 text-white py-3 px-6 rounded-full font-medium transition 
+            relative overflow-hidden cursor-pointer hover:shadow[0_0_15px_rgba(59, 130, 246, 0.4)] hover:bg-white/10 hover:border-white/10
             "
             >
               Send Message
