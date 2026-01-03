@@ -1,0 +1,16 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top horizontal bar -->
+  <rect x="40" y="30" width="120" height="20" fill="white"/>
+  
+  <!-- Bottom horizontal bar -->
+  <rect x="40" y="150" width="120" height="20" fill="white"/>
+  
+  <!-- Main outer circle (thick ring) -->
+  <circle cx="100" cy="100" r="50" fill="none" stroke="white" stroke-width="12"/>
+  
+  <!-- Inner filled circle -->
+  <circle cx="100" cy="100" r="20" fill="white"/>
+  
+  <!-- Diagonal line running through -->
+  <line x1="70" y1="70" x2="130" y2="130" stroke="white" stroke-width="4"/>
+</svg>
