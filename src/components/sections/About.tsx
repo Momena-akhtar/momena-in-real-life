@@ -1,132 +1,83 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGraduationCap , faMessage} from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import RevealOnScroll from "../RevealOnScroll";
+
 const About = () => {
-  const frontendSkills = [
-    "React",
-    "Next.js",
-    "Typescript",
-    "TailwindCSS",
-    "Flutter",
+  const frontend = [
+    { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+    { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+    { name: "TailwindCSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+    { name: "Vite", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" },
   ];
-  const backendSkills = ["Express", "Node.js", "MongoDB", "MySQL", "Flask"];
-  const tools = ["Git", "CI/CD","Docker", "Redis", "Postman"];
-  const aiml = ["Python", "Langchain", "LLMs/RAG", "Tensorflow", "OpenAI API"];
+
+  const backend = [
+    { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+    { name: "Express", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+    { name: "Nest.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg"},
+    { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+    { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+    { name: "Flask", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" },
+  ];
+
+  const aiml = [
+    { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+    { name: "Langchain", logo: "https://avatars.githubusercontent.com/u/126733545?s=200&v=4" },
+    { name: "TensorFlow", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
+    { name: "PyTorch", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
+    { name: "OpenAI", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgo1dralioTT376FfDA2V8UkA4TgEbKspQGw&s" },
+  ];
+
+  const tools = [
+    { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+    { name: "AWS", logo: "https://icon2.cleanpng.com/20190418/vhc/kisspng-amazon-web-services-logo-cloud-computing-amazon-co-logoaws-1-itnext-summit-1713897597915.webp" },
+    { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+    { name: "Redis", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+    { name: "Postman", logo: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" },
+  ];
+
+  const categories = [
+    { title: "Frontend", skills: frontend },
+    { title: "Backend", skills: backend },
+    { title: "AI/ML", skills: aiml },
+    { title: "Tools", skills: tools },
+  ];
+
   return (
     <section
       id="about"
       className="min-h-screen flex items-center justify-center py-20"
     >
       <RevealOnScroll>
-      <div className="max-w-3xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">
-          About me.
-        </h2>
-        <div className="glass rounded-4xl p-6 border-white/10 border transition-all ">
-        <div className="flex flex-col items-center mb-8">
-              <p>
-                <span className="flex items-center gap-2 font-semibold text-lg mb-2">
-                  <FontAwesomeIcon icon={faGraduationCap} />
-                  B.S Computer Science
-                </span>
-                <span className="block text-sm text-gray-300 mb-1">
-                  SEECS, NUST. 2023 - 2027
-                </span>
-              </p>
-              <div className="flex gap-4 mt-4">
-                <a
-                  href="https://github.com/Momena-akhtar"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white text-xl transition"
-                  aria-label="GitHub"
-                >
-                  <FontAwesomeIcon icon={faGithub} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/momena-a-b9462a348/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white text-xl transition"
-                  aria-label="LinkedIn"
-                >
-                  <FontAwesomeIcon icon={faLinkedin}  />
-                </a>
-                <a
-                  href="https://www.gmail.com/momena.akhtar19@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white text-xl transition"
-                  aria-label="Email"
-                >
-                  <FontAwesomeIcon icon={faMessage}  />
-                </a>
-              </div>
-            </div>
-            <hr className="text-gray-600/30"/>
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">
+            What I've worked with.
+          </h2>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="rounded-xl p-6 transition-all">
-              <h3 className="text-xl font-bold mb-4"> Frontend </h3>
-              <div className="flex flex-wrap gap-2 ">
-                {frontendSkills.map((tech) => (
-                  <span
-                    className="bg-white text-black px-5 py-2 cursor-pointer rounded-full text-sm hover:bg-transparent hover:text-white
-                        hover:shadow-[0_2px_8px_rgba(59, 130, 246, 0.2)] transition
-                        "
-                  >
-                    {tech}
-                  </span>
-                ))}
+            {categories.map((category) => (
+              <div
+                key={category.title}
+                className="glass rounded-2xl p-6 border border-white/10"
+              >
+                <h3 className="text-xl font-bold mb-6">{category.title}</h3>
+                <div className="flex flex-wrap gap-3">
+                  {category.skills.map((skill) => (
+                    <div
+                      key={skill.name}
+                      className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/5"
+                    >
+                      <img
+                        src={skill.logo}
+                        alt={skill.name}
+                        className="w-6 h-6"
+                      />
+                      <span className="text-sm font-medium">{skill.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="rounded-xl p-6 transition-all">
-              <h3 className="text-xl font-bold mb-4"> Backend </h3>
-              <div className="flex flex-wrap gap-2 ">
-                {backendSkills.map((tech) => (
-                  <span
-                    className="bg-white text-black px-5 py-2 cursor-pointer rounded-full text-sm hover:bg-transparent hover:text-white
-                        hover:shadow[0_2px_8px_rgba(59, 130, 246, 0.2)] transition
-                        "
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="rounded-xl p-6 transition-all">
-              <h3 className="text-xl font-bold mb-4"> AI/ML </h3>
-              <div className="flex flex-wrap gap-2 ">
-                {aiml.map((tech) => (
-                  <span
-                    className="bg-white text-black px-5 py-2 cursor-pointer rounded-full text-sm hover:bg-transparent 
-                        hover:shadow[0_2px_8px_rgba(59, 130, 246, 0.2)] transition
-                        "
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="rounded-xl p-6 transition-all">
-              <h3 className="text-xl font-bold mb-4"> Tools </h3>
-              <div className="flex flex-wrap gap-2 ">
-                {tools.map((tech) => (
-                  <span
-                    className="bg-white text-black px-5 py-2 cursor-pointer rounded-full text-sm hover:bg-transparent 
-                        hover:shadow[0_2px_8px_rgba(59, 130, 246, 0.2)] transition
-                        "
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
+            ))}
           </div>
         </div>
-       
-      </div>
       </RevealOnScroll>
     </section>
   );
