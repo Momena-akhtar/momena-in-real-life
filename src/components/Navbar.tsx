@@ -26,7 +26,7 @@ const Navbar = ({ menuOpen, setMenuOpen }: NavbarProps) => {
 
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-40">
-      <div className="bg-black border border-[#181818] rounded-full shadow-2xl px-6 py-3">
+      <div className="bg-black/90 backdrop-blur-sm border border-[#181818] rounded-full shadow-2xl px-6 py-3">
         <div className="flex items-center">
           <button
             className="md:hidden text-gray-300 hover:text-white mr-4"
