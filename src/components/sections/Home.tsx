@@ -28,11 +28,11 @@ const Home = () => {
                 <a href="#projects"
                 className="bg-white text-black py-3 px-6 rounded-full font-medium transition relative overflow-hidden 
                 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
-                > View My Work </a>
+                > View my work </a>
                 <a href="#contact"
                 className="bg-transparent border border-white/10 text-white py-3 px-6 rounded-full font-medium transition relative overflow-hidden 
                 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)]"
-                > Contact Me </a>
+                > Get in touch </a>
             </div>
           </div>
         </RevealOnScroll>
