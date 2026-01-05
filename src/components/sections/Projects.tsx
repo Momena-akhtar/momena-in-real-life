@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import RevealOnScroll from '../RevealOnScroll';
-import { faLink, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faLink, faChevronLeft, faChevronRight, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 interface Project {
   title: string;
@@ -22,7 +22,7 @@ const techLogos: Record<string, string> = {
   "NestJS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg",
   "PostGres": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",  
   "Express": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-    "HuggingFace": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+  "HuggingFace": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
   "MongoDB": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
   "TailwindCSS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
   "Langchain": "https://avatars.githubusercontent.com/u/126733545?s=200&v=4",
@@ -59,7 +59,7 @@ const projectsData: Project[] = [
   },
   {
     title: "Collinear",
-    description: "Collinear is an AI-Driven CRM Platform featuring Intelligent Automation and Conversational Assistants. It’s designed to help businesses manage customer relationships more efficiently by leveraging state-of-the-art AI technologies and robust automation features",
+    description: "Collinear is an AI-Driven CRM Platform featuring Intelligent Automation and Conversational Assistants. It's designed to help businesses manage customer relationships more efficiently by leveraging state-of-the-art AI technologies and robust automation features",
     technologies: ["NextJS", "MongoDB", "TailwindCSS", "Express", "Langchain"].map(tech => ({ name: tech, logo: techLogos[tech] })),
     github: "https://github.com/ecellolabs/Collinear",
     live: "https://collinear.developertest.cloud/",
@@ -84,15 +84,6 @@ const projectsData: Project[] = [
     image: "/img1.png",
     collaborators: [{ name: "Shaheer-Ul-Haq", url: "/" }]
   },
-  // {
-  //   title: "Next Rep",
-  //   description: "An AI-powered fitness platform to provide personalized health tracking, progress monitoring, and actionable insights for users.",
-  //   technologies: ["React", "Express", "MongoDB", "TailwindCSS", "Langchain", "OpenAI"].map(tech => ({ name: tech, logo: techLogos[tech] })),
-  //   github: "https://github.com/12Danish/NextRepFrontend",
-  //   live: "https://nextrep.site/",
-  //   image: "/img10.png",
-  //   collaborators: [{ name: "Danish Abbas", url: "https://github.com/12Danish" }]
-  // },
   {
     title: "Saddam's Chatbot",
     description: "Developed a RAG-powered chatbot for Pakistan's leading agency owner, Saddam Hasan, delivering intelligent, context-aware assistance and improving client engagement.",
@@ -115,7 +106,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
   const [hoveredTech, setHoveredTech] = useState<string | null>(null);
 
   return (
-    <div className="flex-shrink-0 w-[400px] rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm overflow-hidden hover:border-white/20 transition-all group">
+    <div className="flex-shrink-0 w-full md:w-[400px] rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm overflow-hidden hover:border-white/20 transition-all group">
       <div className="relative h-48 overflow-hidden">
         <img 
           src={project.image} 
@@ -145,7 +136,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 <img src={tech.logo} alt={tech.name} className="w-full h-full object-contain" />
               </div>
               {hoveredTech === tech.name && (
-                <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black/90 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black/90 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10">
                   {tech.name}
                 </div>
               )}
@@ -198,6 +189,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showAll, setShowAll] = useState(false);
 
   const handleNext = () => {
     if (currentIndex < projectsData.length - 1) {
@@ -222,24 +214,59 @@ const Projects = () => {
             What I've worked on.
           </h2>
           
-          <div className="relative">
+          {/* Mobile: Vertical stack */}
+          <div className="md:hidden space-y-4">
+            <ProjectCard project={projectsData[0]} />
+            
+            {showAll && projectsData.slice(1).map((project, idx) => (
+              <ProjectCard key={idx + 1} project={project} />
+            ))}
+            
+            {projectsData.length > 1 && (
+              <button
+                onClick={() => setShowAll(!showAll)}
+                className="w-full py-3 rounded-full bg-white/5 backdrop-blur-md cursor-pointer border border-white/20 hover:bg-white/20 transition flex items-center justify-center gap-2"
+              >
+                {showAll ? (
+                  <>
+                    Show Less
+                    <FontAwesomeIcon icon={faChevronUp} className="w-4" />
+                  </>
+                ) : (
+                  <>
+                    Show More
+                    <FontAwesomeIcon icon={faChevronDown} className="w-4" />
+                  </>
+                )}
+              </button>
+            )}
+          </div>
+
+          {/* Desktop: Carousel */}
+          <div className="hidden md:block relative">
             <div className="overflow-hidden relative">
               <div 
                 className="flex gap-6 transition-transform duration-500 ease-out"
-                style={{ transform: `translateX(-${currentIndex * 474}px)` }}
+                style={{ transform: `translateX(-${currentIndex * 424}px)` }}
               >
                 {projectsData.map((project, idx) => (
                   <ProjectCard key={idx} project={project} />
                 ))}
               </div>
               
-              <div className="absolute top-0 right-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent pointer-events-none"></div>
+              {currentIndex > 0 && (
+                <div className="absolute top-0 left-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent pointer-events-none"></div>
+              )}
+              
+              {currentIndex < projectsData.length - 1 && (
+                <div className="absolute top-0 right-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent pointer-events-none"></div>
+              )}
             </div>
 
             {currentIndex > 0 && (
               <button
                 onClick={handlePrev}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 w-10 h-10 cursor-pointer rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 w-10 h-10 cursor-pointer rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition z-10"
               >
                 <FontAwesomeIcon icon={faChevronLeft} />
               </button>
@@ -248,7 +275,7 @@ const Projects = () => {
             {currentIndex < projectsData.length - 1 && (
               <button
                 onClick={handleNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 w-10 h-10 cursor-pointer rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 w-10 h-10 cursor-pointer rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition z-10"
               >
                 <FontAwesomeIcon icon={faChevronRight} />
               </button>
