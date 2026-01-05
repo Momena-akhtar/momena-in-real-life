@@ -1,7 +1,7 @@
 import { useState } from "react";
 import RevealOnScroll from "../RevealOnScroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot, faCalendar, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faCalendar, faChevronLeft, faChevronRight, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 interface Experience {
   title: string;
@@ -29,7 +29,7 @@ const experiencesData: Experience[] = [
     dates: "April 2025 - September 2025",
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6nbYTKwdefcsS3WEuGYn52cG6q4ar_LPRQQ&s"
   },
-   {
+  {
     title: "Student Intern",
     description: "Focused primarily on Deep Learning, contributed to real-time avatar-based chatbots and assisted in preprocessing datasets as part of the internship.",
     company: "TUKL R&D Center, NUST.",
@@ -48,7 +48,7 @@ const experiencesData: Experience[] = [
 ];
 
 const ExperienceCard = ({ experience }: { experience: Experience }) => (
-  <div className="flex-shrink-0 w-[400px] p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all">
+  <div className="flex-shrink-0 w-full md:w-[400px] p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all">
     <div className="flex items-center gap-4 mb-4">
       <img src={experience.logo} alt={experience.company} className="w-16 h-16 rounded-lg object-cover" />
       <div>
@@ -76,6 +76,7 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => (
 
 const Experiences = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showAll, setShowAll] = useState(false);
 
   const handleNext = () => {
     if (currentIndex < experiencesData.length - 1) {
@@ -100,7 +101,27 @@ const Experiences = () => {
             Where I have worked.
           </h2>
           
-          <div className="relative">
+          {/* Mobile: Vertical stack */}
+          <div className="md:hidden space-y-4">
+            <ExperienceCard experience={experiencesData[0]} />
+            
+            {showAll && experiencesData.slice(1).map((experience, idx) => (
+              <ExperienceCard key={idx + 1} experience={experience} />
+            ))}
+            
+            {!showAll && experiencesData.length > 1 && (
+              <button
+                onClick={() => setShowAll(true)}
+                className="w-full py-3 rounded-full bg-white/5 cursor-pointer border border-white/20 hover:bg-white/20 transition flex items-center justify-center gap-2"
+              >
+                Show More
+                <FontAwesomeIcon icon={faChevronDown} className="w-4" />
+              </button>
+            )}
+          </div>
+
+          {/* Desktop: Carousel */}
+          <div className="hidden md:block relative">
             <div className="overflow-hidden relative">
               <div 
                 className="flex gap-6 transition-transform duration-500 ease-out"
@@ -114,13 +135,19 @@ const Experiences = () => {
                 ))}
               </div>
               
-              <div className="absolute top-0 right-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent pointer-events-none"></div>
+              {currentIndex > 0 && (
+                <div className="absolute top-0 left-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent pointer-events-none"></div>
+              )}
+              
+              {currentIndex < experiencesData.length - 1 && (
+                <div className="absolute top-0 right-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent pointer-events-none"></div>
+              )}
             </div>
 
             {currentIndex > 0 && (
               <button
                 onClick={handlePrev}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 w-10 h-10 cursor-pointer rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 w-10 h-10 cursor-pointer rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition z-10"
               >
                 <FontAwesomeIcon icon={faChevronLeft} />
               </button>
@@ -129,7 +156,7 @@ const Experiences = () => {
             {currentIndex < experiencesData.length - 1 && (
               <button
                 onClick={handleNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 w-10 h-10 cursor-pointer rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 w-10 h-10 cursor-pointer rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition z-10"
               >
                 <FontAwesomeIcon icon={faChevronRight} />
               </button>
@@ -141,4 +168,4 @@ const Experiences = () => {
   );
 };
 
-export default Experiences; 
+export default Experiences;
